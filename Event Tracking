@@ -1,0 +1,9 @@
+Event Tracking
+
+Let's talk about event tracking and how I built my event tracking system for PHP eCommerce. 
+
+First, I know there are many ways and services out there to track stats. I want to make sure my tracking system can handle new platforms and api changes without having to change the way it works at the core or how the rest of PHP eCommerce uses the event tracking system.
+
+I am going to start by building a interface that each platform like Google Analytics will have to implement before plugging into the event tracking system. Since each platform will have it's own API of how it is used, the adapters to these platforms will be the part that implements the interface. This will be important as the adapter is that only thing that will need to change if any API updates or changes are needed. Everything else should never need to change.
+
+I also want to ensure that this system can handle not only events but tracking like GA allows you to do like eCommerce order tracking, etc. For this, I will need more generic log methods that will allow me to use these.
