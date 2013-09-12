@@ -1,0 +1,17 @@
+System Settings
+
+Every eCommerce system will have settings. Settings will be used to toggle features on/off, turn features on by percentage, etc.
+
+Settings in PHP eCommerce will be simple key/value pairs. Anything else can be part of a config. (API keys and pass phrases, etc.)
+
+First lets plan the settings table, as our setting table will be cached heavily and queried seldom, we can make all the settings one table.
+
+Use cases for settings are as a toggle (0/1) or percentage (0-100) 0 being off and 100 being fully on.
+
+The columns will be as follows
+id - auto increment
+setting_name (varchar 200) Primary Key
+setting (tinyint) unsigned (we don't need negative numbers)
+
+Index will be on setting_name
+
